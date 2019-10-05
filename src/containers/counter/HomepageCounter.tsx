@@ -1,16 +1,15 @@
-import { increment, decrement } from '@store/counter/counterActions'
+import * as counterActions  from '@store/counter/actions';
 import Counter from '@components/counter/Counter'
 import { StoreState } from '@store/index'
-import { Dispatch } from 'redux'
+import { Dispatch, bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-const mapStateToProps = ({ counter }: StoreState) => ({
-  count: counter.count,
+const mapStateToProps = (state: StoreState) => ({
+  count: state.counter.count,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  add: () => dispatch(increment),
-  remove: () => dispatch(decrement),
+  counter_actions: bindActionCreators(counterActions, dispatch),
 })
 
 export default connect(

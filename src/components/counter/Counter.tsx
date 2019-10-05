@@ -1,14 +1,14 @@
 import Icon from '@components/icon/Icon'
+import * as counterActions from '@store/counter/actions'
 
 interface CounterProps {
   count: number
-  add: () => void
-  remove: () => void
+  counter_actions: typeof counterActions
 }
 
-const Counter: React.SFC<CounterProps> = ({ count, add, remove }) => {
-  const onAdd = () => add()
-  const onRemove = () => remove()
+const Counter: React.SFC<CounterProps> = ({ count, counter_actions }) => {
+  const onAdd = () => counter_actions.increment()
+  const onRemove = () => counter_actions.decrement()
   return (
     <>
       <h2>Count: {count}</h2>
