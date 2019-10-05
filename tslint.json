@@ -15,6 +15,12 @@
         "no-implicit-dependencies": false,
         "no-var-requires": false,
         "interface-name": false,
-        "object-literal-sort-keys": false
+        "object-literal-sort-keys": false,
+        "variable-name": {
+            "options": [
+              "allow-snake-case",
+              "allow-pascal-case"
+            ]
+          }
     }
 }
