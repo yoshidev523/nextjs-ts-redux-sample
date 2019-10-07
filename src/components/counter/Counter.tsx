@@ -1,9 +1,11 @@
 import Icon from '@components/icon/Icon'
-import * as counterActions from '@store/counter/actions'
 
 interface CounterProps {
   count: number
-  counter_actions: typeof counterActions
+  counter_actions: {
+    increment: () => void,
+    decrement: () => void
+  }
 }
 
 const Counter: React.SFC<CounterProps> = ({ count, counter_actions }) => {
